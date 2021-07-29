@@ -1,7 +1,7 @@
-// import React from 'react';
+import React from 'react';
 
-const Searchbar = () => {
+import { View } from 'react-native';
 
-};
+const Searchbar = () => <View />;
 
 export { Searchbar };
