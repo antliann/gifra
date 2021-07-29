@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 
 import { SearchScreen, DetailsScreen } from './screens';
 
@@ -12,8 +12,15 @@ export default function App() {
     <NavigationContainer>
       <StatusBar barStyle="light-content" />
       <Stack.Navigator>
-        <Stack.Screen name="Search" component={SearchScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="SearchScreen" component={SearchScreen} options={{ headerShown: false }} />
+        <Stack.Screen
+          name="DetailsScreen"
+          component={DetailsScreen}
+          options={{
+            headerShown: false,
+            ...TransitionPresets.SlideFromRightIOS,
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

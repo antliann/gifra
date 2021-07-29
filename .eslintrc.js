@@ -15,5 +15,6 @@ module.exports = {
     'global-require': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-use-before-define': 'off',
+    'react/prop-types': ['error', { ignore: ['navigation'] }],
   },
 };
