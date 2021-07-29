@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   StyleSheet, View,
 } from 'react-native';
-import { Searchbar } from '../components';
+import { SearchBar } from '../components';
 
 const SearchScreen = () => {
   // const navigateToDetailsScreen = () => navigation.navigate('DetailsScreen');
@@ -10,7 +10,7 @@ const SearchScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Searchbar value={searchValue} onChangeText={setSearchValue} />
+      <SearchBar value={searchValue} setTextValue={setSearchValue} />
     </View>
   );
 };
