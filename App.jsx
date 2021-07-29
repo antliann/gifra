@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { SearchScreen, DetailsScreen } from './screens';
+import { SearchScreen, DetailsScreen } from './src/screens';
 
 const Stack = createStackNavigator();
 
