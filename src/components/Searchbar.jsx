@@ -21,6 +21,13 @@ Searchbar.propTypes = {
 const styles = StyleSheet.create({
   input: {
     color: 'rgba(255, 255, 255, 0.87)',
+    fontSize: 17,
+    padding: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.12)',
+    borderRadius: 16,
+    marginLeft: 8,
+    marginRight: 8,
   },
 });
 
