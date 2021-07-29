@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  StyleSheet, TouchableOpacity, View, Text,
+  StyleSheet, View,
 } from 'react-native';
+import { Searchbar } from '../components';
 
-const SearchScreen = ({ navigation }) => {
-  const navigateToDetailsScreen = () => navigation.navigate('DetailsScreen');
+const SearchScreen = () => {
+  // const navigateToDetailsScreen = () => navigation.navigate('DetailsScreen');
+  const [searchValue, setSearchValue] = useState('');
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={navigateToDetailsScreen}>
-        <Text style={styles.text}>
-          Go to screen 2
-        </Text>
-      </TouchableOpacity>
+      <Searchbar value={searchValue} onChangeText={setSearchValue} />
     </View>
   );
 };
@@ -21,8 +19,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   text: {
     color: '#fff',
