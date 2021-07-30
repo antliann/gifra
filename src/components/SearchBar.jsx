@@ -23,13 +23,13 @@ const SearchBar = ({ setTextValue, value }) => {
           placeholderTextColor="rgba(255, 255, 255, 0.6)"
         />
         {!value.length || (
-          <TouchableOpacity onPress={clearInput}>
+          <TouchableOpacity onPress={clearInput} activeOpacity={1}>
             <ClearIcon />
           </TouchableOpacity>
         )}
       </View>
       {!value.length || (
-        <Button.Cancel />
+        <Button.Cancel onPress={clearInput} />
       )}
     </View>
   );
