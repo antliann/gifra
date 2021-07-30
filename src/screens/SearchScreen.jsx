@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import {
   StyleSheet, View,
 } from 'react-native';
+
+import { colors } from '../theme';
 import { SearchBar } from '../components';
 
 const SearchScreen = () => {
@@ -18,10 +20,10 @@ const SearchScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: colors.black,
   },
   text: {
-    color: '#fff',
+    color: colors.white,
     fontFamily: 'SFPro',
   },
 });

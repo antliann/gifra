@@ -3,7 +3,9 @@ import { func, string } from 'prop-types';
 import {
   StyleSheet, TextInput, TouchableOpacity, View,
 } from 'react-native';
+
 import { Button } from './Button';
+import { colors } from '../theme';
 
 import SearchIcon from '../assets/icons/search.svg';
 import ClearIcon from '../assets/icons/clear-input.svg';
@@ -20,7 +22,7 @@ const SearchBar = ({ setTextValue, value }) => {
           onChangeText={setTextValue}
           value={value}
           placeholder="Search GIPHY"
-          placeholderTextColor="rgba(255, 255, 255, 0.6)"
+          placeholderTextColor={colors.translucentWhite}
         />
         {!value.length || (
           <TouchableOpacity onPress={clearInput} activeOpacity={1}>
@@ -48,14 +50,15 @@ const styles = StyleSheet.create({
   inputContainer: {
     padding: 16,
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.12)',
+    borderColor: colors.highTranslucentWhite,
     borderRadius: 16,
     flexDirection: 'row',
     alignItems: 'center',
     flex: 1,
+    backgroundColor: colors.dark,
   },
   inputText: {
-    color: 'rgba(255, 255, 255, 0.87)',
+    color: colors.lowTranslucentWhite,
     fontSize: 17,
     marginLeft: 8,
     marginRight: 8,

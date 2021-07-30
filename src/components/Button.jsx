@@ -5,11 +5,12 @@ import {
 import { func } from 'prop-types';
 
 import GoBackIcon from '../assets/icons/go-back.svg';
+import { colors } from '../theme';
 
 const Cancel = ({ onPress }) => (
   <TouchableHighlight
     onPress={onPress}
-    underlayColor="rgba(23, 24, 26, 0.04)"
+    underlayColor={colors.translucentGrey}
     style={styles.cancelButton}
     activeOpacity={1}
   >
@@ -20,7 +21,7 @@ const Cancel = ({ onPress }) => (
 const GoBack = ({ onPress }) => (
   <TouchableHighlight
     onPress={onPress}
-    underlayColor="rgba(23, 24, 26, 0.04)"
+    underlayColor={colors.translucentGrey}
     style={styles.goBackButton}
     activeOpacity={1}
   >
@@ -39,7 +40,7 @@ GoBack.propTypes = {
 const styles = StyleSheet.create({
   cancelButton: {
     justifyContent: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     paddingLeft: 14.5,
     paddingRight: 14.5,
     marginLeft: 8,
@@ -48,9 +49,10 @@ const styles = StyleSheet.create({
   cancelButtonText: {
     fontFamily: 'SFPro-Bold',
     fontSize: 16,
+    color: colors.darkGrey,
   },
   goBackButton: {
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     borderRadius: 24,
     paddingLeft: 10,
     width: 48,

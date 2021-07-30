@@ -6,6 +6,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 
 import { SearchScreen, DetailsScreen } from './src/screens';
+import { colors } from './src/theme';
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaProvider style={{ backgroundColor: '#000' }}>
+    <SafeAreaProvider style={{ backgroundColor: colors.black }}>
       <NavigationContainer>
         <StatusBar barStyle="light-content" />
         <Stack.Navigator>
