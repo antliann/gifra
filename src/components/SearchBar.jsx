@@ -21,13 +21,17 @@ const SearchBar = ({ setTextValue, value }) => {
           placeholder="Search GIPHY"
           placeholderTextColor="rgba(255, 255, 255, 0.6)"
         />
-        <TouchableOpacity onPress={clearInput}>
-          <ClearIcon />
-        </TouchableOpacity>
+        {!value.length || (
+          <TouchableOpacity onPress={clearInput}>
+            <ClearIcon />
+          </TouchableOpacity>
+        )}
       </View>
-      <TouchableOpacity onPress={() => {}} style={styles.cancelButton}>
-        <Text style={styles.cancelButtonText}>Cancel</Text>
-      </TouchableOpacity>
+      {!value.length || (
+        <TouchableOpacity onPress={clearInput} style={styles.cancelButton}>
+          <Text style={styles.cancelButtonText}>Cancel</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
