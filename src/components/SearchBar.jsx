@@ -23,6 +23,7 @@ const SearchBar = ({ setTextValue, value }) => {
           value={value}
           placeholder="Search GIPHY"
           placeholderTextColor={colors.translucentWhite}
+          selectionColor={colors.koromiko}
         />
         {!value.length || (
           <TouchableOpacity onPress={clearInput} activeOpacity={1}>
