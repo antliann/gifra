@@ -1,8 +1,9 @@
 import React from 'react';
 import { func, string } from 'prop-types';
 import {
-  StyleSheet, Text, TextInput, TouchableOpacity, View,
+  StyleSheet, TextInput, TouchableOpacity, View,
 } from 'react-native';
+import { Button } from './Button';
 
 import SearchIcon from '../assets/icons/search.svg';
 import ClearIcon from '../assets/icons/clear-input.svg';
@@ -28,9 +29,7 @@ const SearchBar = ({ setTextValue, value }) => {
         )}
       </View>
       {!value.length || (
-        <TouchableOpacity onPress={clearInput} style={styles.cancelButton}>
-          <Text style={styles.cancelButtonText}>Cancel</Text>
-        </TouchableOpacity>
+        <Button.Cancel />
       )}
     </View>
   );
@@ -62,18 +61,6 @@ const styles = StyleSheet.create({
     marginRight: 8,
     flex: 1,
     fontFamily: 'SFPro',
-  },
-  cancelButton: {
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-    paddingLeft: 14.5,
-    paddingRight: 14.5,
-    marginLeft: 8,
-    borderRadius: 8,
-  },
-  cancelButtonText: {
-    fontFamily: 'SFPro-Bold',
-    fontSize: 16,
   },
 });
 
