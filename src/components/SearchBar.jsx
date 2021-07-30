@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   cancelButtonText: {
-
+    fontFamily: 'SFPro-Bold',
+    fontSize: 16,
   },
 });
 

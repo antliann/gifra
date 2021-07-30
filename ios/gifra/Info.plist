@@ -55,6 +55,8 @@
 	<array>
 		<string>SFProText-Medium.ttf</string>
 		<string>SFProText-Regular.ttf</string>
+		<string>SFProText-Bold.ttf</string>
+		<string>SFProText-Semibold.ttf</string>
 	</array>
 </dict>
 </plist>
