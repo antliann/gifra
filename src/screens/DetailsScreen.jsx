@@ -3,7 +3,7 @@ import { StyleSheet, View, Dimensions } from 'react-native';
 import Image from 'react-native-scalable-image';
 
 import { Button } from '../components';
-import { colors } from '../theme';
+import { colors, spacing } from '../theme';
 
 const DetailsScreen = ({ navigation }) => {
   const navigateBack = () => navigation.goBack();
@@ -14,7 +14,7 @@ const DetailsScreen = ({ navigation }) => {
         <Button.GoBack onPress={navigateBack} />
       </View>
       <Image
-        width={Dimensions.get('window').width}
+        width={Dimensions.get('window').width - spacing.sidesPadding * 2}
         source={require('../assets/icons/Rect.png')}
         style={styles.image}
       />
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.black,
+    padding: spacing.sidesPadding,
   },
   text: {
     color: '#fff',

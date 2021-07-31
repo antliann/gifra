@@ -1,8 +1,8 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useFonts } from 'expo-font';
 
 import { SearchScreen, DetailsScreen } from './src/screens';
@@ -23,10 +23,10 @@ export default function App() {
 
   return (
     <SafeAreaProvider style={{ backgroundColor: colors.black }}>
+      <SafeAreaView>
+        <StatusBar barStyle="light-content" />
+      </SafeAreaView>
       <NavigationContainer>
-        <SafeAreaView>
-          <StatusBar style="light" />
-        </SafeAreaView>
         <Stack.Navigator>
           <Stack.Screen name="SearchScreen" component={SearchScreen} options={{ headerShown: false }} />
           <Stack.Screen

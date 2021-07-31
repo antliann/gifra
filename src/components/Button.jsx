@@ -5,7 +5,7 @@ import {
 import { func } from 'prop-types';
 
 import GoBackIcon from '../assets/icons/go-back.svg';
-import { colors } from '../theme';
+import { colors, spacing } from '../theme';
 
 const Cancel = ({ onPress }) => (
   <TouchableHighlight
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     paddingLeft: 14.5,
     paddingRight: 14.5,
-    marginLeft: 8,
+    marginLeft: spacing.sidesPadding,
     borderRadius: 8,
   },
   cancelButtonText: {
