@@ -1,7 +1,7 @@
 import React from 'react';
 import { func, string } from 'prop-types';
 import {
-  StyleSheet, TextInput, TouchableOpacity, View,
+  StyleSheet, TextInput, TouchableWithoutFeedback, View,
 } from 'react-native';
 
 import { Button } from './Button';
@@ -26,9 +26,9 @@ const SearchBar = ({ setTextValue, value }) => {
           selectionColor={colors.koromiko}
         />
         {!value.length || (
-          <TouchableOpacity onPress={clearInput} activeOpacity={1}>
+          <TouchableWithoutFeedback onPress={clearInput}>
             <ClearIcon />
-          </TouchableOpacity>
+          </TouchableWithoutFeedback>
         )}
       </View>
       {!value.length || (
