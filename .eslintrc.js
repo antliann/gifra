@@ -16,5 +16,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-use-before-define': 'off',
     'react/prop-types': ['error', { ignore: ['navigation'] }],
+    'react/style-prop-object': 'off',
   },
 };

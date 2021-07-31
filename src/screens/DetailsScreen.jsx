@@ -1,7 +1,8 @@
 import React from 'react';
-import {
-  StyleSheet, TouchableOpacity, View, Text,
-} from 'react-native';
+import { StyleSheet, View, Dimensions } from 'react-native';
+import Image from 'react-native-scalable-image';
+
+import { Button } from '../components';
 import { colors } from '../theme';
 
 const DetailsScreen = ({ navigation }) => {
@@ -9,9 +10,14 @@ const DetailsScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={navigateBack}>
-        <Text style={styles.text}>Go back</Text>
-      </TouchableOpacity>
+      <View style={styles.backButtonContainer}>
+        <Button.GoBack onPress={navigateBack} />
+      </View>
+      <Image
+        width={Dimensions.get('window').width}
+        source={require('../assets/icons/Rect.png')}
+        style={styles.image}
+      />
     </View>
   );
 };
@@ -20,11 +26,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.black,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   text: {
     color: '#fff',
+  },
+  backButtonContainer: {
+    position: 'absolute',
+    top: 17,
+    left: 17,
+    zIndex: 1,
+  },
+  image: {
+    borderRadius: 24,
   },
 });
 
