@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, View, Dimensions } from 'react-native';
 import Image from 'react-native-scalable-image';
 
-import { Button } from '../components';
-import { colors, spacing } from '../theme';
+import { Button, UserBlock } from '../components';
+import { colors, sizes } from '../theme';
 
 const DetailsScreen = ({ navigation }) => {
   const navigateBack = () => navigation.goBack();
@@ -14,10 +14,13 @@ const DetailsScreen = ({ navigation }) => {
         <Button.GoBack onPress={navigateBack} />
       </View>
       <Image
-        width={Dimensions.get('window').width - spacing.sidesPadding * 2}
-        source={require('../assets/icons/Rect.png')}
+        width={Dimensions.get('window').width - sizes.sideSpacing * 2}
+        source={require('../assets/icons/image.png')}
         style={styles.image}
       />
+      <View style={styles.userContainer}>
+        <UserBlock />
+      </View>
     </View>
   );
 };
@@ -26,7 +29,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.black,
-    padding: spacing.sidesPadding,
+    padding: sizes.sideSpacing,
   },
   text: {
     color: '#fff',
@@ -39,6 +42,9 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 24,
+  },
+  userContainer: {
+    marginTop: 16,
   },
 });
 

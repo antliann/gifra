@@ -4,7 +4,7 @@ import {
   StyleSheet, TouchableWithoutFeedback, View,
 } from 'react-native';
 
-import { colors, spacing } from '../theme';
+import { colors, sizes } from '../theme';
 import { SearchBar } from '../components';
 
 const SearchScreen = ({ navigation }) => {
@@ -25,11 +25,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.black,
-    padding: spacing.sidesPadding,
+    padding: sizes.sideSpacing,
   },
   text: {
     color: colors.white,
-    fontFamily: 'SFPro',
+    fontFamily: 'SFPro-Regular',
   },
 });
 

@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 
 import { Button } from './Button';
-import { colors, spacing } from '../theme';
+import { colors, sizes } from '../theme';
 
 import SearchIcon from '../assets/icons/search.svg';
 import ClearIcon from '../assets/icons/clear-input.svg';
@@ -60,10 +60,10 @@ const styles = StyleSheet.create({
   inputText: {
     color: colors.lowTranslucentWhite,
     fontSize: 17,
-    marginLeft: spacing.sidesPadding,
-    marginRight: spacing.sidesPadding,
+    marginLeft: sizes.sideSpacing,
+    marginRight: sizes.sideSpacing,
     flex: 1,
-    fontFamily: 'SFPro',
+    fontFamily: 'SFPro-Regular',
   },
 });
 

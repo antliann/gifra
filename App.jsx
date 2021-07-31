@@ -12,9 +12,10 @@ const Stack = createStackNavigator();
 
 export default function App() {
   const [loaded] = useFonts({
-    SFPro: require('./src/assets/fonts/SFProText-Regular.ttf'),
+    'SFPro-Regular': require('./src/assets/fonts/SFProText-Regular.ttf'),
     'SFPro-SemiBold': require('./src/assets/fonts/SFProText-Semibold.ttf'),
     'SFPro-Bold': require('./src/assets/fonts/SFProText-Bold.ttf'),
+    'Inter-Regular': require('./src/assets/fonts/Inter-Regular.ttf'),
   });
 
   if (!loaded) {

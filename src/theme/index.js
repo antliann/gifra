@@ -12,6 +12,8 @@ export const colors = {
   highTranslucentWhite: 'rgba(255, 255, 255, 0.12)',
 };
 
-export const spacing = {
-  sidesPadding: 8,
+export const sizes = {
+  sideSpacing: 8,
+  roundEntitySize: 48,
+  roundEntityRadius: 24,
 };
