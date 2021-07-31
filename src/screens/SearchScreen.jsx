@@ -27,10 +27,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.black,
     padding: sizes.sideSpacing,
   },
-  text: {
-    color: colors.white,
-    fontFamily: 'SFPro-Regular',
-  },
 });
 
 export { SearchScreen };

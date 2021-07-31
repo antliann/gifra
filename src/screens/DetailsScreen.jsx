@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import {
+  StyleSheet, View, Text, Dimensions,
+} from 'react-native';
 import Image from 'react-native-scalable-image';
 
 import { Button, UserBlock } from '../components';
@@ -21,6 +23,11 @@ const DetailsScreen = ({ navigation }) => {
       <View style={styles.userContainer}>
         <UserBlock />
       </View>
+      <View style={styles.relatedTextContainer}>
+        <Text style={styles.relatedText}>
+          Related GIFs
+        </Text>
+      </View>
     </View>
   );
 };
@@ -30,9 +37,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.black,
     padding: sizes.sideSpacing,
-  },
-  text: {
-    color: '#fff',
   },
   backButtonContainer: {
     position: 'absolute',
@@ -45,6 +49,17 @@ const styles = StyleSheet.create({
   },
   userContainer: {
     marginTop: 16,
+    marginBottom: 17,
+  },
+  relatedText: {
+    color: colors.white,
+    fontFamily: 'SFPro-SemiBold',
+    fontSize: 17,
+    lineHeight: 22,
+  },
+  relatedTextContainer: {
+    paddingTop: sizes.sideSpacing,
+    paddingBottom: sizes.sideSpacing,
   },
 });
 
