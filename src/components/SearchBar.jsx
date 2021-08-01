@@ -46,6 +46,7 @@ SearchBar.propTypes = {
 const styles = StyleSheet.create({
   searchBarContainer: {
     flexDirection: 'row',
+    zIndex: 1,
   },
   inputContainer: {
     padding: 16,
