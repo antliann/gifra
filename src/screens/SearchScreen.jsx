@@ -5,18 +5,26 @@ import {
 } from 'react-native';
 
 import { colors, sizes } from '../theme';
-import { SearchBar } from '../components';
+import { SearchBar, Spinner } from '../components';
 
 const SearchScreen = ({ navigation }) => {
   const navigateToDetailsScreen = () => navigation.navigate('DetailsScreen');
   const [searchValue, setSearchValue] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <View style={styles.container}>
       <SearchBar value={searchValue} setTextValue={setSearchValue} />
-      <TouchableWithoutFeedback onPress={navigateToDetailsScreen}>
-        <Image source={require('../assets/icons/image.png')} />
-      </TouchableWithoutFeedback>
+      {isLoading ? (
+        <View style={styles.spinnerContainer}>
+          <Spinner />
+        </View>
+      )
+        : (
+          <TouchableWithoutFeedback onPress={navigateToDetailsScreen}>
+            <Image source={require('../assets/icons/image.png')} />
+          </TouchableWithoutFeedback>
+        )}
     </View>
   );
 };
@@ -26,6 +34,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.black,
     padding: sizes.sideSpacing,
+  },
+  spinnerContainer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
