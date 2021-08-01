@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import Image from 'react-native-scalable-image';
 
-import { Button, UserBlock } from '../components';
+import { Button, UserBlock, ViewsBlock } from '../components';
 import { colors, sizes } from '../theme';
 
 const DetailsScreen = ({ navigation }) => {
@@ -15,11 +15,16 @@ const DetailsScreen = ({ navigation }) => {
       <View style={styles.backButtonContainer}>
         <Button.GoBack onPress={navigateBack} />
       </View>
-      <Image
-        width={Dimensions.get('window').width - sizes.sideSpacing * 2}
-        source={require('../assets/icons/image.png')}
-        style={styles.image}
-      />
+      <View>
+        <Image
+          width={Dimensions.get('window').width - sizes.sideSpacing * 2}
+          source={require('../assets/icons/image.png')}
+          style={styles.image}
+        />
+        <View styles={styles.viewsContainer}>
+          <ViewsBlock />
+        </View>
+      </View>
       <View style={styles.userContainer}>
         <UserBlock />
       </View>
@@ -46,6 +51,15 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 24,
+  },
+  viewsContainer: {
+    position: 'absolute',
+    top: 40,
+    left: 50,
+    zIndex: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'red',
   },
   userContainer: {
     marginTop: 16,
