@@ -3,6 +3,7 @@ import {
   StyleSheet, View, Text, Dimensions, ScrollView,
 } from 'react-native';
 import Image from 'react-native-scalable-image';
+import { useRoute } from '@react-navigation/native';
 
 import { Button, ImagesList, UserBlock } from '../components';
 import { colors, sizes } from '../theme';
@@ -10,6 +11,8 @@ import { colors, sizes } from '../theme';
 import { IMAGES } from './SearchScreen';
 
 const DetailsScreen = ({ navigation }) => {
+  const { params } = useRoute();
+
   const navigateBack = () => navigation.goBack();
 
   return (
@@ -19,7 +22,7 @@ const DetailsScreen = ({ navigation }) => {
       </View>
       <Image
         width={Dimensions.get('window').width - sizes.sideSpacing * 2}
-        source={{ uri: IMAGES[1] }}
+        source={{ uri: params.imageLink }}
         style={styles.image}
       />
       <View style={styles.userContainer}>

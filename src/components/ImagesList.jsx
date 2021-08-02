@@ -27,7 +27,10 @@ const ImagesList = ({ images, keyPrefix, withHeaderSpacing }) => {
         ListHeaderComponent={withHeaderSpacing && <View style={styles.spaceBlock} />}
         ListFooterComponent={<View style={styles.spaceBlock} />}
         renderItem={({ item, i }) => {
-          const navigateToDetailsScreen = () => navigation.navigate('DetailsScreen');
+          const navigateToDetailsScreen = () => navigation.navigate('DetailsScreen', {
+            id: 1,
+            imageLink: item,
+          });
           return (
             <View style={styles.imageContainer} key={keyPrefix + i + item}>
               <TouchableWithoutFeedback onPress={navigateToDetailsScreen}>
@@ -53,7 +56,7 @@ ImagesList.defaultProps = {
 
 const styles = StyleSheet.create({
   listContainer: {
-    marginLeft: -8,
+    marginLeft: -sizes.sideSpacing,
   },
   spaceBlock: {
     height: 32,
