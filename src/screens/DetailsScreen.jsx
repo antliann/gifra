@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 24,
+    overlayColor: colors.black,
   },
   userContainer: {
     marginTop: 16,
