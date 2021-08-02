@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { colors, sizes } from '../theme';
 import { SearchBar, Spinner, ImagesList } from '../components';
 
-const IMAGES = ['https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rotating_earth_%28large%29.gif/274px-Rotating_earth_%28large%29.gif', 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg', 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg', 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'];
+export const IMAGES = ['https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rotating_earth_%28large%29.gif/274px-Rotating_earth_%28large%29.gif', 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg', 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg', 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'];
 
 const SearchScreen = () => {
   const [searchValue, setSearchValue] = useState('');

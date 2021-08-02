@@ -1,17 +1,19 @@
 import React from 'react';
 import {
-  StyleSheet, View, Text, Dimensions,
+  StyleSheet, View, Text, Dimensions, ScrollView,
 } from 'react-native';
 import Image from 'react-native-scalable-image';
 
-import { Button, UserBlock } from '../components';
+import { Button, ImagesList, UserBlock } from '../components';
 import { colors, sizes } from '../theme';
+
+import { IMAGES } from './SearchScreen';
 
 const DetailsScreen = ({ navigation }) => {
   const navigateBack = () => navigation.goBack();
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} stickyHeaderIndices={[0]}>
       <View style={styles.backButtonContainer}>
         <Button.GoBack onPress={navigateBack} />
       </View>
@@ -28,7 +30,8 @@ const DetailsScreen = ({ navigation }) => {
           Related GIFs
         </Text>
       </View>
-    </View>
+      <ImagesList images={IMAGES} />
+    </ScrollView>
   );
 };
 
@@ -40,7 +43,7 @@ const styles = StyleSheet.create({
   },
   backButtonContainer: {
     position: 'absolute',
-    top: 17,
+    paddingTop: 17,
     left: 17,
     zIndex: 1,
   },
