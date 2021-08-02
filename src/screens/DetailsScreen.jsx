@@ -19,7 +19,7 @@ const DetailsScreen = ({ navigation }) => {
       </View>
       <Image
         width={Dimensions.get('window').width - sizes.sideSpacing * 2}
-        source={require('../assets/icons/image.png')}
+        source={{ uri: IMAGES[1] }}
         style={styles.image}
       />
       <View style={styles.userContainer}>
@@ -30,7 +30,7 @@ const DetailsScreen = ({ navigation }) => {
           Related GIFs
         </Text>
       </View>
-      <ImagesList images={IMAGES} />
+      <ImagesList images={IMAGES} keyPrefix="details" />
     </ScrollView>
   );
 };

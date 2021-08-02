@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import Image from 'react-native-scalable-image';
 import MasonryList from '@react-native-seoul/masonry-list';
-import { arrayOf, string } from 'prop-types';
+import { arrayOf, bool, string } from 'prop-types';
 import { useNavigation } from '@react-navigation/native';
 
 import { sizes } from '../theme';
@@ -14,7 +14,7 @@ const IMAGE_WIDTH = (Dimensions.get('window').width
   - sizes.sideSpacing * (IMAGES_PER_ROW + 1))
   / IMAGES_PER_ROW;
 
-const ImagesList = ({ images }) => {
+const ImagesList = ({ images, keyPrefix, withHeaderSpacing }) => {
   const navigation = useNavigation();
 
   return (
@@ -22,13 +22,13 @@ const ImagesList = ({ images }) => {
       showsVerticalScrollIndicator={false}
       numColumns={IMAGES_PER_ROW}
       data={images}
-      keyExtractor={(item, index) => index}
-      ListHeaderComponent={<View style={styles.topSpace} />}
-      // ListFooterComponent={<FooterSpace />}
-      renderItem={({ item }) => {
+      keyPrefix={keyPrefix}
+      ListHeaderComponent={withHeaderSpacing && <View style={styles.spaceBlock} />}
+      ListFooterComponent={<View style={styles.spaceBlock} />}
+      renderItem={({ item, i }) => {
         const navigateToDetailsScreen = () => navigation.navigate('DetailsScreen');
         return (
-          <TouchableWithoutFeedback onPress={navigateToDetailsScreen}>
+          <TouchableWithoutFeedback onPress={navigateToDetailsScreen} key={keyPrefix + i + item}>
             <Image width={IMAGE_WIDTH} source={{ uri: item }} style={styles.image} />
           </TouchableWithoutFeedback>
         );
@@ -39,11 +39,20 @@ const ImagesList = ({ images }) => {
 
 ImagesList.propTypes = {
   images: arrayOf(string).isRequired,
+  keyPrefix: string.isRequired,
+  withHeaderSpacing: bool,
+};
+
+ImagesList.defaultProps = {
+  withHeaderSpacing: false,
 };
 
 const styles = StyleSheet.create({
-  topSpace: {
+  spaceBlock: {
     height: 32,
+  },
+  image: {
+    borderRadius: 16,
   },
 });
 
