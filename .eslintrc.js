@@ -4,6 +4,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
   },
+  env: {
+    browser: true,
+  },
   rules: {
     // to avoid problems with Babel module resolver
     'import/no-unresolved': 'off',
@@ -16,5 +19,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-use-before-define': 'off',
     'react/prop-types': ['error', { ignore: ['navigation'] }],
+    'no-console': 'off',
   },
 };

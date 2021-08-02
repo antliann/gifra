@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
+import { useDispatch, useSelector } from 'react-redux';
 import { colors, sizes } from '../theme';
 import { SearchBar, Spinner, ImagesList } from '../components';
+import { searchGifs } from '../store';
 
 export const IMAGES = [
   'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rotating_earth_%28large%29.gif/274px-Rotating_earth_%28large%29.gif',
@@ -23,6 +25,17 @@ export const IMAGES = [
 const SearchScreen = () => {
   const [searchValue, setSearchValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+  const {
+    searchResults, isFulfilled, isPending, isRejected,
+  } = useSelector((state) => state);
+
+  console.log(searchResults);
+
+  useEffect(() => {
+    setIsLoading(true);
+    dispatch(searchGifs())?.finally(() => setIsLoading(false));
+  }, [searchValue]);
 
   return (
     <View style={styles.container}>
