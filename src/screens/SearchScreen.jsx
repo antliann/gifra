@@ -19,7 +19,7 @@ const SearchScreen = () => {
   const performSearch = () => dispatch(searchGifs({ query: debouncedSearchValue }));
 
   useEffect(() => {
-    performSearch();
+    if (searchValue) performSearch();
   }, [debouncedSearchValue]);
 
   const gifsLinksArray = useMemo(() => (
