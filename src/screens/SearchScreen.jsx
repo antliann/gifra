@@ -11,7 +11,7 @@ import { searchGifs } from '../store';
 
 const SearchScreen = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [debouncedSearchValue] = useDebounce(searchValue, 2000);
+  const [debouncedSearchValue] = useDebounce(searchValue, 2000, { leading: !searchValue });
 
   const dispatch = useDispatch();
   const {
