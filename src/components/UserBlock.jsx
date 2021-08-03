@@ -2,21 +2,28 @@ import React from 'react';
 import {
   Image, View, StyleSheet, Text,
 } from 'react-native';
+import { objectOf, string } from 'prop-types';
+
 import { colors, sizes } from '../theme';
 
-const UserBlock = () => (
+const UserBlock = ({ user }) => (
   <View style={styles.container}>
-    <Image source={require('../assets/icons/image.png')} style={styles.avatar} />
+    <Image source={{ uri: user.avatar_url }} style={styles.avatar} />
     <View>
       <Text style={styles.userName}>
-        Username
+        {user.display_name}
       </Text>
       <Text style={styles.userId}>
-        @userid
+        @
+        {user.username}
       </Text>
     </View>
   </View>
 );
+
+UserBlock.propTypes = {
+  user: objectOf(string).isRequired,
+};
 
 const styles = StyleSheet.create({
   container: {

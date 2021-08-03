@@ -34,6 +34,7 @@ const ImagesList = ({
         renderItem={({ item, i }) => {
           const navigateToDetailsScreen = () => navigation.push('DetailsScreen', {
             gifId: item.id,
+            user: item.user,
             bigSizeGifLink: item?.images?.fixed_width?.url,
           });
           return (

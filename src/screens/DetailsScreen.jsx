@@ -33,7 +33,7 @@ const DetailsScreen = ({ navigation }) => {
         style={styles.image}
       />
       <View style={styles.userContainer}>
-        <UserBlock />
+        <UserBlock user={params.user} />
       </View>
       <View style={styles.relatedTextContainer}>
         <Text style={styles.relatedText}>
