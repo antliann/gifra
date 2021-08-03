@@ -1,7 +1,4 @@
-import {
-  createSlice, createAsyncThunk, createStore, applyMiddleware, configureStore,
-} from '@reduxjs/toolkit';
-import thunk from 'redux-thunk';
+import { createSlice, createAsyncThunk, configureStore } from '@reduxjs/toolkit';
 import { formRequest } from './methods';
 
 const initialState = {
@@ -11,11 +8,11 @@ const initialState = {
   searchResults: null,
 };
 
-export const searchGifs = createAsyncThunk('searchGifs', () => {
-  return fetch(formRequest({ q: 'cat' }))
+export const searchGifs = createAsyncThunk('searchGifs', () => (
+  fetch(formRequest({ q: 'cat' }))
     .then((response) => response.json())
-    .then((responseJson) => responseJson, (error) => console.log(error));
-});
+    .then((responseJson) => responseJson, (error) => console.log(error))
+));
 
 const searchSlice = createSlice({
   name: 'searchGifs',
@@ -42,7 +39,7 @@ const searchSlice = createSlice({
         isPending: false,
         isFulfilled: false,
         searchResults: action.payload,
-      }))
+      }));
   },
 });
 

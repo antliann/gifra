@@ -1,11 +1,21 @@
 import React, { useEffect } from 'react';
 import {
-  Animated, Easing, StyleSheet, LogBox,
+  Animated, Easing, StyleSheet,
 } from 'react-native';
 
 const Spinner = () => {
   useEffect(() => {
-    LogBox.ignoreLogs(['Animated: `useNativeDriver`']);
+    Animated.loop(
+      Animated.timing(
+        spinValue,
+        {
+          toValue: 1,
+          duration: 1000,
+          easing: Easing.linear,
+          useNativeDriver: true,
+        },
+      ),
+    ).start();
   }, []);
 
   return (
@@ -17,18 +27,6 @@ const Spinner = () => {
 };
 
 const spinValue = new Animated.Value(0);
-
-Animated.loop(
-  Animated.timing(
-    spinValue,
-    {
-      toValue: 1,
-      duration: 1000,
-      easing: Easing.linear,
-      useNativeDriver: true,
-    },
-  ),
-).start();
 
 const spin = spinValue.interpolate({
   inputRange: [0, 1],
