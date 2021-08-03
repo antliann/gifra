@@ -20,5 +20,6 @@ module.exports = {
     'no-use-before-define': 'off',
     'react/prop-types': ['error', { ignore: ['navigation'] }],
     'no-console': 'off',
+    'react/jsx-one-expression-per-line': 'off',
   },
 };

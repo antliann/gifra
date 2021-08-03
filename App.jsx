@@ -18,6 +18,7 @@ export default function App() {
     'SFPro-SemiBold': require('./src/assets/fonts/SFProText-Semibold.ttf'),
     'SFPro-Bold': require('./src/assets/fonts/SFProText-Bold.ttf'),
     'Inter-Regular': require('./src/assets/fonts/Inter-Regular.ttf'),
+    'Inter-Bold': require('./src/assets/fonts/Inter-Bold.ttf'),
   });
 
   if (!loaded) {

@@ -11,7 +11,6 @@ const initialState = {
 export const searchGifs = createAsyncThunk('searchGifs', ({ query }) => (
   fetch(formRequest({ q: query }))
     .then((response) => response.json())
-    .then((responseJson) => responseJson, (error) => console.log(error))
 ));
 
 const searchSlice = createSlice({
@@ -35,15 +34,13 @@ const searchSlice = createSlice({
       }))
       .addCase(searchGifs.fulfilled, (state, action) => ({
         ...state,
-        isRejected: true,
+        isFulfilled: true,
+        isRejected: false,
         isPending: false,
-        isFulfilled: false,
         searchResults: action.payload,
       }));
   },
 });
-
-// export const store = createStore(searchSlice.reducer, applyMiddleware(thunk));
 
 export const store = configureStore({
   reducer: searchSlice.reducer,
