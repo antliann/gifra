@@ -1,7 +1,8 @@
 import {
-  createSlice, createAsyncThunk, createStore, applyMiddleware,
+  createSlice, createAsyncThunk, createStore, applyMiddleware, configureStore,
 } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
+import { formRequest } from './methods';
 
 const initialState = {
   isFulfilled: true,
@@ -10,36 +11,47 @@ const initialState = {
   searchResults: null,
 };
 
-export const searchGifs = createAsyncThunk('searchGifs', async () => {
-  fetch('https://mywebsite.com/mydata.json')
+export const searchGifs = createAsyncThunk('searchGifs', () => {
+  return fetch(formRequest({ q: 'cat' }))
     .then((response) => response.json())
     .then((responseJson) => responseJson, (error) => console.log(error));
 });
 
 const searchSlice = createSlice({
-  name: 'posts',
+  name: 'searchGifs',
   initialState,
-  extraReducers: {
-    [searchGifs.pending]: (state) => ({
-      ...state,
-      isPending: true,
-      isFulfilled: false,
-      isRejected: false,
-    }),
-    [searchGifs.rejected]: (state) => ({
-      ...state,
-      isRejected: true,
-      isPending: false,
-      isFulfilled: false,
-    }),
-    [searchGifs.fulfilled]: (state, action) => ({
-      ...state,
-      isFulfilled: true,
-      isPending: false,
-      isRejected: false,
-      searchResults: action.payload,
-    }),
+  reducers: {
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(searchGifs.pending, (state) => ({
+        ...state,
+        isPending: true,
+        isFulfilled: false,
+        isRejected: false,
+      }))
+      .addCase(searchGifs.rejected, (state) => ({
+        ...state,
+        isRejected: true,
+        isPending: false,
+        isFulfilled: false,
+      }))
+      .addCase(searchGifs.fulfilled, (state, action) => ({
+        ...state,
+        isRejected: true,
+        isPending: false,
+        isFulfilled: false,
+        searchResults: action.payload,
+      }))
   },
 });
 
-export const store = createStore(searchSlice.reducer, applyMiddleware(thunk));
+// export const store = createStore(searchSlice.reducer, applyMiddleware(thunk));
+
+export const store = configureStore({
+  reducer: searchSlice.reducer,
+  devTools: true,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: false,
+  }),
+});

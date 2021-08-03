@@ -13,7 +13,6 @@ export const IMAGES = [
   'https://static.wixstatic.com/media/4cbe8d_f1ed2800a49649848102c68fc5a66e53~mv2.gif',
   'https://media3.giphy.com/media/HP7mtfNa1E4CEqNbNL/200w.gif?cid=82a1493bh8gopeq40bvhulqsqgjkmark4qish6yecqnzqmg8&rid=200w.gif&ct=g',
   'https://images-cdn.newscred.com/Zz04NjA3ZjljMjQ0ODkxMWViOWRjYzU1OGJkNjI1ZjVkZA==',
-  'https://theclikk.com/wp-content/uploads/2021/03/gif.gif',
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQekA-51uIZZ5nLx8SvH37ar5GVFIVcoz0q7w&usqp=CAU',
   'https://media2.giphy.com/media/3oEjI4sFlp73fvEYgw/giphy.gif',
   'https://acegif.com/wp-content/uploads/2021/04/bugs-bunny-m.gif',
@@ -24,7 +23,6 @@ export const IMAGES = [
 
 const SearchScreen = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const {
     searchResults, isFulfilled, isPending, isRejected,
@@ -33,14 +31,13 @@ const SearchScreen = () => {
   console.log(searchResults);
 
   useEffect(() => {
-    setIsLoading(true);
-    dispatch(searchGifs())?.finally(() => setIsLoading(false));
+    dispatch(searchGifs());
   }, [searchValue]);
 
   return (
     <View style={styles.container}>
       <SearchBar value={searchValue} setTextValue={setSearchValue} />
-      {isLoading ? (
+      {isPending ? (
         <View style={styles.spinnerContainer}>
           <Spinner />
         </View>
