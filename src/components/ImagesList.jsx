@@ -33,8 +33,8 @@ const ImagesList = ({
         ListFooterComponent={<View style={styles.spaceBlock} />}
         renderItem={({ item, i }) => {
           const navigateToDetailsScreen = () => navigation.navigate('DetailsScreen', {
-            id: 1,
-            imageLink: item,
+            gifId: 1,
+            gifIndex: i,
           });
           return (
             <View style={styles.imageContainer} key={keyPrefix + i + item}>

@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   StyleSheet, View, Text, Dimensions, ScrollView,
 } from 'react-native';
 import Image from 'react-native-scalable-image';
 import { useRoute } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
 
 import { Button, ImagesList, UserBlock } from '../components';
 import { colors, sizes } from '../theme';
-
-import { IMAGES } from './SearchScreen';
 
 const DetailsScreen = ({ navigation }) => {
   const { params } = useRoute();
 
   const navigateBack = () => navigation.goBack();
+
+  const { searchResults } = useSelector((state) => state);
+
+  const relatedGifsLinksArray = useMemo(() => (
+    searchResults?.data?.map(
+      (item) => item.id !== params.gifId && item?.images?.preview_gif?.url,
+    ) || []
+  ), [searchResults]);
 
   return (
     <ScrollView style={styles.container} stickyHeaderIndices={[0]}>
@@ -22,7 +29,7 @@ const DetailsScreen = ({ navigation }) => {
       </View>
       <Image
         width={Dimensions.get('window').width - sizes.sideSpacing * 2}
-        source={{ uri: params.imageLink }}
+        source={{ uri: searchResults?.data[params.gifIndex].images?.preview_gif?.url }}
         style={styles.image}
       />
       <View style={styles.userContainer}>
@@ -33,7 +40,7 @@ const DetailsScreen = ({ navigation }) => {
           Related GIFs
         </Text>
       </View>
-      <ImagesList images={IMAGES} keyPrefix="details" />
+      <ImagesList images={relatedGifsLinksArray} keyPrefix="details" />
     </ScrollView>
   );
 };
