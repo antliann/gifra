@@ -16,8 +16,6 @@ const DetailsScreen = ({ navigation }) => {
 
   const { searchResults } = useSelector((state) => state);
 
-  console.log(params);
-
   const relatedGifsLinksArray = useMemo(() => (
     searchResults?.data?.filter(
       (item) => item.id !== params.gifId,

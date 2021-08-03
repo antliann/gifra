@@ -32,7 +32,7 @@ const ImagesList = ({
         ListHeaderComponent={withHeaderSpacing && <View style={styles.spaceBlock} />}
         ListFooterComponent={<View style={styles.spaceBlock} />}
         renderItem={({ item, i }) => {
-          const navigateToDetailsScreen = () => navigation.navigate('DetailsScreen', {
+          const navigateToDetailsScreen = () => navigation.push('DetailsScreen', {
             gifId: item.id,
             bigSizeGifLink: item?.images?.fixed_width?.url,
           });
