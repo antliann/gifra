@@ -16,8 +16,10 @@ const SearchScreen = () => {
     searchResults, isPending, isFulfilled, isRejected,
   } = useSelector((state) => state);
 
+  const performSearch = () => dispatch(searchGifs({ query: debouncedSearchValue }));
+
   useEffect(() => {
-    dispatch(searchGifs());
+    performSearch();
   }, [debouncedSearchValue]);
 
   const gifsLinksArray = useMemo(() => (
@@ -34,7 +36,7 @@ const SearchScreen = () => {
       )
         : (
           <View style={styles.imagesContainer}>
-            <ImagesList images={gifsLinksArray} keyPrefix="search" withHeaderSpacing />
+            <ImagesList onRefresh={performSearch} images={gifsLinksArray} keyPrefix="search" withHeaderSpacing />
           </View>
         )}
     </View>

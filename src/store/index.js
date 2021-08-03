@@ -8,8 +8,8 @@ const initialState = {
   searchResults: null,
 };
 
-export const searchGifs = createAsyncThunk('searchGifs', () => (
-  fetch(formRequest({ q: 'cat' }))
+export const searchGifs = createAsyncThunk('searchGifs', ({ query }) => (
+  fetch(formRequest({ q: query }))
     .then((response) => response.json())
     .then((responseJson) => responseJson, (error) => console.log(error))
 ));

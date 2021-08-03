@@ -4,7 +4,9 @@ import {
 } from 'react-native';
 import Image from 'react-native-scalable-image';
 import MasonryList from '@react-native-seoul/masonry-list';
-import { arrayOf, bool, string } from 'prop-types';
+import {
+  arrayOf, bool, func, string,
+} from 'prop-types';
 import { useNavigation } from '@react-navigation/native';
 
 import { colors, sizes } from '../theme';
@@ -14,12 +16,15 @@ const IMAGE_WIDTH = (Dimensions.get('window').width
   - sizes.sideSpacing * (IMAGES_PER_ROW + 1))
   / IMAGES_PER_ROW;
 
-const ImagesList = ({ images, keyPrefix, withHeaderSpacing }) => {
+const ImagesList = ({
+  images, keyPrefix, withHeaderSpacing, onRefresh,
+}) => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.listContainer}>
       <MasonryList
+        onRefresh={onRefresh}
         showsVerticalScrollIndicator={false}
         numColumns={IMAGES_PER_ROW}
         data={images}
@@ -48,10 +53,12 @@ ImagesList.propTypes = {
   images: arrayOf(string).isRequired,
   keyPrefix: string.isRequired,
   withHeaderSpacing: bool,
+  onRefresh: func,
 };
 
 ImagesList.defaultProps = {
   withHeaderSpacing: false,
+  onRefresh: null,
 };
 
 const styles = StyleSheet.create({
