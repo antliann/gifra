@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.black,
     padding: sizes.sideSpacing,
+    paddingBottom: 0,
   },
   centeringContainer: {
     position: 'absolute',
