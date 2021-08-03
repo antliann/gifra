@@ -23,7 +23,7 @@ const SearchScreen = () => {
   }, [debouncedSearchValue]);
 
   const gifsLinksArray = useMemo(() => (
-    searchResults?.data?.map((item) => item?.images?.preview_gif?.url) || []
+    searchResults?.data || []
   ), [searchResults]);
 
   return (

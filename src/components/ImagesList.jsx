@@ -33,13 +33,17 @@ const ImagesList = ({
         ListFooterComponent={<View style={styles.spaceBlock} />}
         renderItem={({ item, i }) => {
           const navigateToDetailsScreen = () => navigation.navigate('DetailsScreen', {
-            gifId: 1,
-            gifIndex: i,
+            gifId: item.id,
+            bigSizeGifLink: item?.images?.fixed_width?.url,
           });
           return (
             <View style={styles.imageContainer} key={keyPrefix + i + item}>
               <TouchableWithoutFeedback onPress={navigateToDetailsScreen}>
-                <Image width={IMAGE_WIDTH} source={{ uri: item }} style={styles.image} />
+                <Image
+                  width={IMAGE_WIDTH}
+                  source={{ uri: item.images?.preview_gif?.url }}
+                  style={styles.image}
+                />
               </TouchableWithoutFeedback>
             </View>
           );

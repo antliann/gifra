@@ -16,9 +16,11 @@ const DetailsScreen = ({ navigation }) => {
 
   const { searchResults } = useSelector((state) => state);
 
+  console.log(params);
+
   const relatedGifsLinksArray = useMemo(() => (
-    searchResults?.data?.map(
-      (item) => item.id !== params.gifId && item?.images?.preview_gif?.url,
+    searchResults?.data?.filter(
+      (item) => item.id !== params.gifId,
     ) || []
   ), [searchResults]);
 
@@ -29,7 +31,7 @@ const DetailsScreen = ({ navigation }) => {
       </View>
       <Image
         width={Dimensions.get('window').width - sizes.sideSpacing * 2}
-        source={{ uri: searchResults?.data[params.gifIndex].images?.preview_gif?.url }}
+        source={{ uri: params.bigSizeGifLink }}
         style={styles.image}
       />
       <View style={styles.userContainer}>
