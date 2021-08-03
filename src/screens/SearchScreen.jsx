@@ -22,7 +22,7 @@ const SearchScreen = () => {
     searchResults?.data || []
   ), [searchResults]);
 
-  const performSearch = () => dispatch(searchGifs({ query: debouncedSearchValue }));
+  const performSearch = () => dispatch(searchGifs({ q: debouncedSearchValue }));
 
   useEffect(() => {
     if (searchValue) performSearch();
@@ -58,7 +58,7 @@ const SearchScreen = () => {
             </Text>
           </View>
         );
-      case isFulfilled && !gifsLinksArray.length:
+      case isFulfilled && !searchResults.pagination.total_count:
         return (
           <View style={styles.centeringContainer}>
             <Text style={styles.infoText}>
@@ -66,7 +66,7 @@ const SearchScreen = () => {
             </Text>
           </View>
         );
-      case isFulfilled && !!gifsLinksArray.length:
+      case isFulfilled && !!searchResults.pagination.total_count:
         return (
           <View style={styles.imagesContainer}>
             <ImagesList

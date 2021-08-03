@@ -31,14 +31,14 @@ const ImagesList = ({
         keyPrefix={keyPrefix}
         ListHeaderComponent={withHeaderSpacing && <View style={styles.spaceBlock} />}
         ListFooterComponent={<View style={styles.spaceBlock} />}
-        renderItem={({ item, i }) => {
+        renderItem={({ item }) => {
           const navigateToDetailsScreen = () => navigation.push('DetailsScreen', {
             gifId: item.id,
             user: item.user,
             bigSizeGifLink: item?.images?.fixed_width?.url,
           });
           return (
-            <View style={styles.imageContainer} key={keyPrefix + i + item}>
+            <View style={styles.imageContainer} key={keyPrefix + item.id}>
               <TouchableWithoutFeedback onPress={navigateToDetailsScreen}>
                 <Image
                   width={IMAGE_WIDTH}
