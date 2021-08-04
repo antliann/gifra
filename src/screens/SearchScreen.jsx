@@ -58,7 +58,7 @@ const SearchScreen = () => {
             </Text>
           </View>
         );
-      case isFulfilled && !searchResults.pagination.total_count:
+      case isFulfilled && !searchResults?.pagination.total_count:
         return (
           <View style={styles.centeringContainer}>
             <Text style={styles.infoText}>
@@ -66,7 +66,7 @@ const SearchScreen = () => {
             </Text>
           </View>
         );
-      case isFulfilled && !!searchResults.pagination.total_count:
+      case isFulfilled && !!searchResults?.pagination.total_count:
         return (
           <View style={styles.imagesContainer}>
             <ImagesList

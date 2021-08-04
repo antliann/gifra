@@ -5,7 +5,7 @@ import {
 import Image from 'react-native-scalable-image';
 import MasonryList from '@react-native-seoul/masonry-list';
 import {
-  arrayOf, bool, func, string,
+  arrayOf, bool, func, object, string,
 } from 'prop-types';
 import { useNavigation } from '@react-navigation/native';
 
@@ -55,7 +55,7 @@ const ImagesList = ({
 };
 
 ImagesList.propTypes = {
-  images: arrayOf(string).isRequired,
+  images: arrayOf(object).isRequired,
   keyPrefix: string.isRequired,
   withHeaderSpacing: bool,
   onRefresh: func,

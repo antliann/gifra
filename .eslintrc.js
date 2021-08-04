@@ -21,5 +21,6 @@ module.exports = {
     'react/prop-types': ['error', { ignore: ['navigation'] }],
     'no-console': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'react/forbid-prop-types': 'off',
   },
 };

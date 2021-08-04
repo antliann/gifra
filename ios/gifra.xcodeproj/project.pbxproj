@@ -12,18 +12,19 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		96905EF65AED1B983A6B3ABC /* libPods-gifra.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-gifra.a */; };
-		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		7BA6B9BCD59742019CE7D4C4 /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0ACAD073D465D899EAAD8 /* SFProText-Medium.ttf */; };
-		5858A81207BF47ACAD2B72C3 /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 685DEE2622CB45ECB79272DC /* SFProText-Regular.ttf */; };
-		B20C11E6F1BC4F91AC96BB40 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D9053139537486594A8CA8A /* SFProText-Bold.ttf */; };
 		48B4E8806A0A4390819303D1 /* SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9337393AC374606BC734156 /* SFProText-Semibold.ttf */; };
+		5858A81207BF47ACAD2B72C3 /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 685DEE2622CB45ECB79272DC /* SFProText-Regular.ttf */; };
+		7BA6B9BCD59742019CE7D4C4 /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0ACAD073D465D899EAAD8 /* SFProText-Medium.ttf */; };
 		82DA2CC2D1C144D7AA24122F /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98F09C16CAB145F885C8565E /* Inter-Regular.ttf */; };
 		85CE2E19072A47F1A6727241 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEBE6D09EB734397A411640B /* Inter-Bold.ttf */; };
+		96905EF65AED1B983A6B3ABC /* libPods-gifra.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-gifra.a */; };
+		B20C11E6F1BC4F91AC96BB40 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D9053139537486594A8CA8A /* SFProText-Bold.ttf */; };
+		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		0EB0ACAD073D465D899EAAD8 /* SFProText-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProText-Medium.ttf"; path = "../src/assets/fonts/SFProText-Medium.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* gifra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gifra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = gifra/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = gifra/AppDelegate.m; sourceTree = "<group>"; };
@@ -32,18 +33,17 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = gifra/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = gifra/main.m; sourceTree = "<group>"; };
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-gifra.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gifra.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		685DEE2622CB45ECB79272DC /* SFProText-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProText-Regular.ttf"; path = "../src/assets/fonts/SFProText-Regular.ttf"; sourceTree = "<group>"; };
 		6C2E3173556A471DD304B334 /* Pods-gifra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gifra.debug.xcconfig"; path = "Target Support Files/Pods-gifra/Pods-gifra.debug.xcconfig"; sourceTree = "<group>"; };
+		6D9053139537486594A8CA8A /* SFProText-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProText-Bold.ttf"; path = "../src/assets/fonts/SFProText-Bold.ttf"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-gifra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gifra.release.xcconfig"; path = "Target Support Files/Pods-gifra/Pods-gifra.release.xcconfig"; sourceTree = "<group>"; };
+		98F09C16CAB145F885C8565E /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../src/assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = gifra/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
+		CEBE6D09EB734397A411640B /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../src/assets/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
+		E9337393AC374606BC734156 /* SFProText-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProText-Semibold.ttf"; path = "../src/assets/fonts/SFProText-Semibold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		0EB0ACAD073D465D899EAAD8 /* SFProText-Medium.ttf */ = {isa = PBXFileReference; name = "SFProText-Medium.ttf"; path = "../src/assets/fonts/SFProText-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		685DEE2622CB45ECB79272DC /* SFProText-Regular.ttf */ = {isa = PBXFileReference; name = "SFProText-Regular.ttf"; path = "../src/assets/fonts/SFProText-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6D9053139537486594A8CA8A /* SFProText-Bold.ttf */ = {isa = PBXFileReference; name = "SFProText-Bold.ttf"; path = "../src/assets/fonts/SFProText-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E9337393AC374606BC734156 /* SFProText-Semibold.ttf */ = {isa = PBXFileReference; name = "SFProText-Semibold.ttf"; path = "../src/assets/fonts/SFProText-Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		98F09C16CAB145F885C8565E /* Inter-Regular.ttf */ = {isa = PBXFileReference; name = "Inter-Regular.ttf"; path = "../src/assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CEBE6D09EB734397A411640B /* Inter-Bold.ttf */ = {isa = PBXFileReference; name = "Inter-Bold.ttf"; path = "../src/assets/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +114,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		919F2AAB9FB54EAE8B4C0AF9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0EB0ACAD073D465D899EAAD8 /* SFProText-Medium.ttf */,
+				685DEE2622CB45ECB79272DC /* SFProText-Regular.ttf */,
+				6D9053139537486594A8CA8A /* SFProText-Bold.ttf */,
+				E9337393AC374606BC734156 /* SFProText-Semibold.ttf */,
+				98F09C16CAB145F885C8565E /* Inter-Regular.ttf */,
+				CEBE6D09EB734397A411640B /* Inter-Bold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,20 +144,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		919F2AAB9FB54EAE8B4C0AF9 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				0EB0ACAD073D465D899EAAD8 /* SFProText-Medium.ttf */,
-				685DEE2622CB45ECB79272DC /* SFProText-Regular.ttf */,
-				6D9053139537486594A8CA8A /* SFProText-Bold.ttf */,
-				E9337393AC374606BC734156 /* SFProText-Semibold.ttf */,
-				98F09C16CAB145F885C8565E /* Inter-Regular.ttf */,
-				CEBE6D09EB734397A411640B /* Inter-Bold.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -421,9 +420,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(inherited)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -472,9 +469,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
-				LIBRARY_SEARCH_PATHS = (
-					"\"$(inherited)\"",
-				);
+				LIBRARY_SEARCH_PATHS = "\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
