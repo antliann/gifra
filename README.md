@@ -1,7 +1,7 @@
 # How to run the app:
 
 ### You can open this link: https://expo.dev/@antliann/gifra with an already deployed app
-####(you will need to install Expo Go on your phone)
+#### (you will need to install Expo Go on your phone)
 
 
 ## To run the project on your PC:
