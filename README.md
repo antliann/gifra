@@ -1,19 +1,5 @@
-# How to run the app:
+#### An app which uses Gifra public API got gif images search performing
 
-### You can open this link: https://expo.dev/@antliann/gifra with an already deployed app
-#### (you will need to install Expo Go on your phone)
+To run the app in Expo Go you can open this link: https://expo.dev/@antliann/tic-tac-toe
 
-
-## To run the project on your PC:
-
-#### Run this commands in the project directory:
-1) Download all dependencies by running `npm install`
-2) Do one of this:
-   - run `expo start` in project folder
-   - build project from `ios` folder in Xcode
-   - build project from `android` folder in Android Studio
-
-
-\
-P.S. If Node.js is not installed on your PC, download it from
-https://nodejs.org/en/download/
+P.S. `Me from 2022:` I know that this project contains some ugly code, sorry, I was young and inexperienced :)
